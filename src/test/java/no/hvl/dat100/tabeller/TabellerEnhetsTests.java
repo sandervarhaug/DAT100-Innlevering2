@@ -73,7 +73,7 @@ class TabellerEnhetsTests {
 	@Test
 	void testreverser() {
 
-		int[] tabell = { 6, 4, 1 };
+		int[] tabell = {6, 4, 1};
 
 		int[] reversert1 = Tabeller.reverser(tabell1);
 		int[] reversert2 = Tabeller.reverser(tabell2);

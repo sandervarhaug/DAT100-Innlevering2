@@ -1,63 +1,81 @@
 package no.hvl.dat100.tabeller;
 
+
+import java.util.Arrays;
+
 public class Tabeller {
 
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+		for (int tall : tabell) {
+            System.out.println(tall);
+        }
 
 	}
 
 	// b)
 	public static String tilStreng(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
+        String tabellstreng = Arrays.toString(tabell);
+        return tabellstreng.replaceAll("\\s","");
 	}
 
 	// c)
 	public static int summer(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden summer ikke implementert");
+        int sum = 0;
+		for (int tall : tabell) {
+            sum += tall;
+        }
+        return sum;
 	}
 
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden finnesTall ikke implementert");
+		for (int n : tabell) {
+            if  (n == tall) {
+                return true;
+            }
+        }
+        return false;
 
 	}
 
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden posisjonTall ikke implementert");
+		for  (int i  = 0; i < tabell.length; i++) {
+            if (tabell[i] == tall) {
+                return i;
+            }
+        }
+        return -1;
 	}
 
 	// f)
 	public static int[] reverser(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden reverser ikke implementert");
+        for (int i = 0; i < tabell.length / 2; i++) {
+            int temp = tabell[i];
+            tabell[i] = tabell[tabell.length - i - 1];
+            tabell[tabell.length - i - 1] = temp;
+        }
+        return tabell;
 	}
 
 	// g)
 	public static boolean erSortert(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
+		int[] sortertTabell = Arrays.copyOf(tabell,  tabell.length);
+        Arrays.sort(sortertTabell);
+        return Arrays.equals(sortertTabell, tabell);
 	}
 
 	// h)
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden settSammen ikke implementert");
-
+		int[] tabellKombo = new int[tabell1.length + tabell2.length];
+        System.arraycopy(tabell1, 0, tabellKombo, 0, tabell1.length);
+        System.arraycopy(tabell2, 0, tabellKombo, tabell1.length, tabell2.length);
+        return tabellKombo;
 	}
 }
