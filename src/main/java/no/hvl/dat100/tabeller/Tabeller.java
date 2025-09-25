@@ -54,12 +54,13 @@ public class Tabeller {
 
 	// f)
 	public static int[] reverser(int[] tabell) {
-        for (int i = 0; i < tabell.length / 2; i++) {
-            int temp = tabell[i];
-            tabell[i] = tabell[tabell.length - i - 1];
-            tabell[tabell.length - i - 1] = temp;
+        int[] reversert = new int[tabell.length];
+        int k = 0;
+        for(int i = tabell.length - 1; i >= 0; i--) {
+            reversert[i] = tabell[k];
+            k++;
         }
-        return tabell;
+        return reversert;
 	}
 
 	// g)
