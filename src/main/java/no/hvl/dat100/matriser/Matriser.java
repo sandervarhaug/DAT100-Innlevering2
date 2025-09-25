@@ -9,7 +9,7 @@ public class Matriser {
 		
 		for  (int i = 0; i < matrise.length; i++) {
             for (int j = 0; j < matrise[i].length; j++) {
-                System.out.print(matrise[j] + " ");
+                System.out.print(matrise[i][j] + " ");
             }
         }
 	}
